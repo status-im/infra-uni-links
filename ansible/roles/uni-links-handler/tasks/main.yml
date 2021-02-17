@@ -1,16 +1,4 @@
 ---
-- name: Install nginx
-  apt:
-    pkg: nginx
-
-- name: Create nginx proxy config
-  template:
-    src: 'uni-links-proxy.conf.j2'
-    dest: /etc/nginx/sites-enabled/10-uni-links-proxy.conf
-    mode: 0644
-  notify:
-    - restart nginx
-
 - name: Start handler container
   docker_container:
     pull:     true

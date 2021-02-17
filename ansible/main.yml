@@ -4,5 +4,6 @@
   roles:
     - { role: origin-certs,      tags: origin-certs }
     - { role: uni-links-handler, tags: uni-links-handler }
+    - { role: nginx,             tags: nginx }
     - { role: open-ports,        tags: open-ports }
     - { role: threatstack,       tags: threatstack }
