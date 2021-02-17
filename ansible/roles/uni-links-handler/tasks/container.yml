@@ -1,0 +1,24 @@
+---
+- name: Create directory for config
+  file:
+    path: '{{ uni_links_service_path }}'
+    owner: 'dockremap'
+    group: 'docker'
+    mode: 0755
+    state: 'directory'
+
+- name: Create compose file
+  template:
+    src: 'docker-compose.yml.j2'
+    dest: '{{ uni_links_compose_file }}'
+    owner: 'dockremap'
+    group: 'docker'
+    mode: 0640
+
+- name: Create container
+  docker_compose:
+    project_src: '{{ uni_links_service_path }}'
+    pull: true
+    state: '{{ compose_state }}'
+    restarted: '{{ compose_restart }}'
+    recreate: '{{ compose_recreate }}'

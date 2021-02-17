@@ -1,0 +1,12 @@
+---
+version: '3.7'
+services:
+  app:
+    container_name: '{{ uni_links_cont_name }}'
+    image: '{{ uni_links_cont_image }}'
+    restart: 'always'
+    labels:
+      # enable automatic container updates
+      com.centurylinklabs.watchtower.enable: 'true' 
+    ports:
+      - '127.0.0.1:{{ uni_links_cont_port }}:3000'

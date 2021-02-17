@@ -1,0 +1,14 @@
+---
+- name: Consul service definition
+  include_role: name=consul-service
+  vars:
+    consul_config_name: '{{ uni_links_cont_name }}'
+    consul_services:
+      - id: '{{ uni_links_cont_name }}'
+        name: '{{ uni_links_cont_name }}'
+        port: '{{ uni_links_cont_port }}'
+        tags: ['{{ env }}.{{ stage }}', 'uni-links-handler']
+        checks:
+          - id: '{{ uni_links_cont_name }}-health'
+            type: http
+            http: 'http://localhost:{{ uni_links_cont_port }}/health'
