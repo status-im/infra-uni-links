@@ -12,6 +12,7 @@ variable "env" {
 variable "stage" {
   description = "Stage of environment"
   type        = string
+  default     = ""
 }
 
 variable "name" {
