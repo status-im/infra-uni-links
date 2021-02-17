@@ -26,20 +26,6 @@
     ports:
       - '127.0.0.1:{{ uni_links_cont_port }}:3000'
 
-- name: Enable HTTP & HTTPS ports
-  iptables:
-    comment: Redirects
-    chain: INPUT
-    jump: ACCEPT
-    source: '0.0.0.0/0'
-    protocol: 'tcp'
-    destination_port: '{{ item }}'
-  with_items:
-    - 80
-    - 443
-  notify:
-    - Save iptables rules
-
 - name: Consul service definition
   include_role: name=consul-service
   vars:

@@ -1,0 +1,6 @@
+---
+# Open Nginx Ports
+open_ports_default_comment: 'HTTP & HTTPS'
+open_ports_list:
+  - { port: 80, protocol: 'tcp' }
+  - { port: 443, protocol: 'tcp' }
