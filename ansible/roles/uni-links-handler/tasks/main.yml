@@ -1,0 +1,55 @@
+---
+- name: Install nginx
+  apt:
+    pkg: nginx
+
+- name: Create nginx proxy config
+  template:
+    src: 'uni-links-proxy.conf.j2'
+    dest: /etc/nginx/sites-enabled/10-uni-links-proxy.conf
+    mode: 0644
+  notify:
+    - restart nginx
+
+- name: Start handler container
+  docker_container:
+    pull:     true
+    name:     '{{ uni_links_cont_name }}'
+    image:    '{{ uni_links_cont_image }}'
+    state:    '{{ cont_state }}'
+    recreate: '{{ cont_recreate }}'
+    restart:  '{{ cont_restart }}'
+    restart_policy: always
+    labels:
+      # enable automatic container updates
+      com.centurylinklabs.watchtower.enable: 'true' 
+    ports:
+      - '127.0.0.1:{{ uni_links_cont_port }}:3000'
+
+- name: Enable HTTP & HTTPS ports
+  iptables:
+    comment: Redirects
+    chain: INPUT
+    jump: ACCEPT
+    source: '0.0.0.0/0'
+    protocol: 'tcp'
+    destination_port: '{{ item }}'
+  with_items:
+    - 80
+    - 443
+  notify:
+    - Save iptables rules
+
+- name: Consul service definition
+  include_role: name=consul-service
+  vars:
+    consul_config_name: '{{ uni_links_cont_name }}'
+    consul_services:
+      - id: '{{ uni_links_cont_name }}'
+        name: '{{ uni_links_cont_name }}'
+        port: '{{ uni_links_cont_port }}'
+        tags: ['{{ env }}.{{ stage }}', 'uni-links-handler']
+        checks:
+          - id: '{{ uni_links_cont_name }}-health'
+            type: http
+            http: 'http://localhost:{{ uni_links_cont_port }}/health'

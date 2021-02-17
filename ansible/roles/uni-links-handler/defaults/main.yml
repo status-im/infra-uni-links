@@ -1,0 +1,10 @@
+---
+uni_links_domain_name: 'join.status.im'
+uni_links_cont_image: 'statusteam/universal-links-handler:deploy'
+uni_links_cont_name: uni-links-handler
+uni_links_cont_port: 8092
+
+# Generic container options
+cont_state: started
+cont_recreate: false
+cont_restart: false
