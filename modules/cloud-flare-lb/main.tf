@@ -1,3 +1,7 @@
+locals {
+  stage = var.stage != "" ? var.stage : terraform.workspace
+}
+
 /* https://support.cloudflare.com/hc/en-us/requests/1543877 */
 resource "cloudflare_load_balancer_monitor" "health" {
   description    = "Basic /health check"
@@ -16,7 +20,7 @@ resource "cloudflare_load_balancer_monitor" "health" {
 
 /* https://github.com/terraform-providers/terraform-provider-cloudflare/issues/54 */
 resource "cloudflare_load_balancer_pool" "do-eu-amsterdam3" {
-  name               = "do-eu-amsterdam3.${var.env}.${terraform.workspace}"
+  name               = "do-eu-amsterdam3.${var.env}.${local.stage}"
   monitor            = cloudflare_load_balancer_monitor.health.id
   notification_email = "jakub@status.im"
   minimum_origins    = 1
@@ -33,7 +37,7 @@ resource "cloudflare_load_balancer_pool" "do-eu-amsterdam3" {
 }
 
 resource "cloudflare_load_balancer_pool" "gc-us-central1-a" {
-  name               = "gc-us-central1-a.${var.env}.${terraform.workspace}"
+  name               = "gc-us-central1-a.${var.env}.${local.stage}"
   monitor            = cloudflare_load_balancer_monitor.health.id
   notification_email = "jakub@status.im"
   minimum_origins    = 1
@@ -50,7 +54,7 @@ resource "cloudflare_load_balancer_pool" "gc-us-central1-a" {
 }
 
 resource "cloudflare_load_balancer_pool" "ac-cn-hongkong-c" {
-  name               = "ac-cn-hongkong-c.${var.env}.${terraform.workspace}"
+  name               = "ac-cn-hongkong-c.${var.env}.${local.stage}"
   monitor            = cloudflare_load_balancer_monitor.health.id
   notification_email = "jakub@status.im"
   minimum_origins    = 1

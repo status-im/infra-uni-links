@@ -9,6 +9,11 @@ variable "env" {
   type        = string
 }
 
+variable "stage" {
+  description = "Stage of environment"
+  type        = string
+}
+
 variable "name" {
   description = "Name of load balancer"
   type        = string
