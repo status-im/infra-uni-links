@@ -17,7 +17,10 @@ uni_links_cont_port: 8092
 
 This uses Docker Compose to create the container:
 ```
-
+admin@node-01.do-ams3.uni-links.misc:/docker/uni-links-handler % docker-compose ps
+      Name                     Command               State            Ports          
+-------------------------------------------------------------------------------------
+uni-links-handler   docker-entrypoint.sh /bin/ ...   Up      127.0.0.1:809
 ```
 
 The container uses [Watchtower](https://github.com/v2tec/watchtower) to enable automatic updates on tab push.
