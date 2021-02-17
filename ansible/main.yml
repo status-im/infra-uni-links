@@ -2,6 +2,7 @@
 - name: Configure uni-links
   hosts: uni-links
   roles:
+    - { role: swap-file,         tags: swap-file }
     - { role: origin-certs,      tags: origin-certs }
     - { role: uni-links-handler, tags: uni-links-handler }
     - { role: nginx,             tags: nginx }

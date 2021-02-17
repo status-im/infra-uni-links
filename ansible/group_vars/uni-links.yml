@@ -3,6 +3,9 @@
 uni_links_domain_name: 'join.status.im'
 uni_links_cont_port: 8092
 
+# Just in case
+swap_file_size_mb: 1024
+
 # Open Nginx Ports
 open_ports_default_comment: 'HTTP & HTTPS'
 open_ports_list:
