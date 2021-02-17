@@ -1,6 +1,7 @@
 ---
 - name: Configure uni-links
   hosts: uni-links
+  roles:
     - { role: origin-certs,      tags: origin-certs }
     - { role: uni-links-handler, tags: uni-links-handler }
     - { role: threatstack,       tags: threatstack }
