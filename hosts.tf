@@ -6,6 +6,7 @@ module "uni_links" {
   name       = "node"
   env        = "uni-links"
   group      = "uni-links"
+  stage      = "misc"
   domain     = var.domain
 
   open_tcp_ports = ["80", "443"]
@@ -15,6 +16,7 @@ module "uni_links" {
 module "uni_links_lb" {
   source = "./modules/cloud-flare-lb"
   env    = "uni-links"
+  stage  = "misc"
   name   = "join"
   hosts  = module.uni_links.hosts_by_dc
   domain = var.public_domain
