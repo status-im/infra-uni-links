@@ -1,5 +1,5 @@
 # Uses PASSWORD_STORE_DIR environment variable
-provider "pass" { refresh_store = false }
+provider "pass" { }
 
 /* Token for interacting with Cloudflare API. */
 data "pass_password" "cloudflare_token" {
