@@ -14,7 +14,7 @@ For how to use this repo read the [Infra Repo Usage](https://github.com/status-i
 
 # Continuous Integration
 
-Pushes to the `master` branch in the [universal-link-handler](https://github.com/status-im/universal-links-handler) repo trigger [Jenkins builds](https://jenkins.status.im/job/misc/job/universal-links-handler/).
+Pushes to the `master` branch in the [universal-link-handler](https://github.com/status-im/universal-links-handler) repo trigger [Jenkins builds](https://ci.status.im/job/website/job/join.status.im/).
 
 That create new Docker image which is pushed to [Docker Hub](https://hub.docker.com/r/statusteam/universal-links-handler/).
 
