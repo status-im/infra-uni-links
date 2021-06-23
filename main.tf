@@ -3,8 +3,8 @@
 terraform {
   backend "consul" {
     address = "https://consul.statusim.net:8400"
-    lock = true /* Lock to avoid syncing issues */
-    gzip = true /* KV store has a limit of 512KB */
+    lock    = true /* Lock to avoid syncing issues */
+    gzip    = true /* KV store has a limit of 512KB */
     /* WARNING This needs to be changed for every repo. */
     path      = "terraform/uni-links/"
     ca_file   = "ansible/files/consul-ca.crt"
@@ -23,7 +23,7 @@ data "cloudflare_zones" "active" {
 /* For easier access to zone ID by domain name */
 locals {
   zones = {
-    for zone in data.cloudflare_zones.active.zones:
-      zone.name => zone.id
+    for zone in data.cloudflare_zones.active.zones :
+    zone.name => zone.id
   }
 }
