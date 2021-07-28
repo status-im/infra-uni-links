@@ -1,6 +1,6 @@
 ---
 - name: nginx
-  src: git@github.com:status-im/ansible-role-nginx.git
+  src: git@github.com:status-im/infra-role-nginx.git
   version: 3043c998cbc92a634a71dc48363b3e2525696d26
   scm: git
 
@@ -9,9 +9,9 @@
   version: f7dcb7e1944d2ec0655bf8e7ce6f45a1317b65b9
   scm: git
 
-- name: infra-role-bootstrap
-  src: git@github.com:status-im/infra-role-bootstrap.git
-  version: c1f535e4b2851f08b1013bd57ab42d0c1e31e3b2
+- name: infra-role-bootstrap-linux
+  src: git@github.com:status-im/infra-role-bootstrap-linux.git
+  version: 73d16a19970db4d1e27aa284bc3e4786b8a3c659
   scm: git
 
 - name: consul-service
