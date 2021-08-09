@@ -7,10 +7,11 @@ uni_links_cont_port: 8092
 swap_file_size_mb: 1024
 
 # Open Nginx Ports
-open_ports_default_comment: 'HTTP & HTTPS'
+open_ports_default_comment: 'Universal Links'
+open_ports_default_chain: 'SERVICES'
 open_ports_list:
-  - { port: 80, protocol: 'tcp' }
-  - { port: 443, protocol: 'tcp' }
+  - { port: 80  }
+  - { port: 443 }
 
 # Nginx SSL Proxy configuration
 nginx_sites:
