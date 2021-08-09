@@ -1,15 +1,12 @@
 ---
 # Root password
-bootstrap__root_pass: '{{lookup("passwordstore", "hosts/admin-pass")}}'
+bootstrap__root_pass: '{{lookup("bitwarden", "root-pass")}}'
 # Consul encryption key
-bootstrap__consul_encryption_key: '{{lookup("passwordstore", "services/consul/encryption-key")}}'
+bootstrap__consul_encryption_key: '{{lookup("bitwarden", "consul", field="encryption-key")}}'
 
 # CloudFlare Origin certificates
 origin_certs:
   - domain: 'status.im'
-    crt: '{{lookup("passwordstore", "cloud/Cloudflare/status.im/origin.crt returnall=true")}}'
-    key: '{{lookup("passwordstore", "cloud/Cloudflare/status.im/origin.key returnall=true")}}'
+    crt: '{{lookup("bitwarden", "CloudFlare/status.im", file="origin.crt")}}'
+    key: '{{lookup("bitwarden", "CloudFlare/status.im", file="origin.key")}}'
     default: true
-
-# Consul Encryption
-consul_encryption_key: '{{lookup("passwordstore", "services/consul/encryption-key")}}'
