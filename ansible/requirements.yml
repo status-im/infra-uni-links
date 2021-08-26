@@ -11,12 +11,12 @@
 
 - name: infra-role-bootstrap-linux
   src: git@github.com:status-im/infra-role-bootstrap-linux.git
-  version: 6a296b2e5917a192fc351fc9e14472f5c9b7aaa6
+  version: 8a76a9e7bb644804116b3f6b4f80a6269347b21a
   scm: git
 
 - name: infra-role-wireguard
   src: git@github.com:status-im/infra-role-wireguard.git
-  version: f0791c0edc1602b5e6be4b8b98fb0ee3e365d2e0
+  version: 49757eacbb3840d3c03ae159baec96b2c3492682
   scm: git
 
 - name: consul-service
@@ -31,7 +31,7 @@
 
 - name: open-ports
   src: git@github.com:status-im/infra-role-open-ports.git
-  version: cc10f580cb12cd33fa2ae48f52cb1fe3f2f3f631
+  version: 24dc30dbdf85e6758cb6924074b2f7a0f4541524
   scm: git
 
 - name: threatstack
