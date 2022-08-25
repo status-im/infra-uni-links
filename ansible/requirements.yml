@@ -6,12 +6,12 @@
 
 - name: origin-certs
   src: git@github.com:status-im/infra-role-origin-certs.git
-  version: 60587f86e085255b537cc37647003af105214d20
+  version: f2b061da8976444d6576b755578f0e799cde4372
   scm: git
 
 - name: infra-role-bootstrap-linux
   src: git@github.com:status-im/infra-role-bootstrap-linux.git
-  version: 9de1a4265c78d171d31385ae666d3abc99776f8c
+  version: d2eaa2d875f41d063e46eb6318270903315aab4d
   scm: git
 
 - name: infra-role-wireguard
@@ -21,7 +21,7 @@
 
 - name: consul-service
   src: git@github.com:status-im/infra-role-consul-service.git
-  version: 2b3d4e53856d6cc91ae5c5a342fd12f2bb96aa88
+  version: 7653d06cfc4d2613ee14bf637d38d98b0201864f
   scm: git
 
 - name: swap-file
@@ -36,5 +36,5 @@
 
 - name: threatstack
   src: git@github.com:status-im/infra-role-threatstack.git
-  version: 90b3fa5df2c5b72402adce7e12cba0da44a7daa1
+  version: 581bf6f1bd8b0d4873a77166b9ceb48a417565eb
   scm: git
