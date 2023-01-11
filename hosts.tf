@@ -2,6 +2,7 @@
 
 module "uni_links" {
   source     = "github.com/status-im/infra-tf-multi-provider"
+
   host_count = var.uni_links_hosts
   name       = "node"
   env        = "uni-links"
@@ -13,10 +14,12 @@ module "uni_links" {
 
 /* Load Blanacer for created hosts */
 module "uni_links_lb" {
-  source = "./modules/cloud-flare-lb"
+  source     = "github.com/status-im/infra-tf-cloud-flare-lb"
+
   name   = "join"
   domain = var.public_domain
   hosts  = module.uni_links.hosts_by_dc
+
   /* Required to map our DCs to pool regions. */
   region_map = tomap({
     "gc-us-central1-a" = "ENAM" /* Eastern North America */
