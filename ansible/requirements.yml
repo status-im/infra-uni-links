@@ -11,17 +11,17 @@
 
 - name: infra-role-bootstrap-linux
   src: git@github.com:status-im/infra-role-bootstrap-linux.git
-  version: d2eaa2d875f41d063e46eb6318270903315aab4d
+  version: 338a830648b210726a5b3e7837ed52046a9936f9
   scm: git
 
 - name: infra-role-wireguard
   src: git@github.com:status-im/infra-role-wireguard.git
-  version: b711bbabd2dc3d9ce8b1c3a6e5bc785901db9d09
+  version: 6c83e0bdcecba772e5c652c89e1995865d14c662
   scm: git
 
 - name: consul-service
   src: git@github.com:status-im/infra-role-consul-service.git
-  version: 7653d06cfc4d2613ee14bf637d38d98b0201864f
+  version: 4849a3c9d7f2045669880e4e17eeb71980b2e4d0
   scm: git
 
 - name: swap-file
