@@ -7,7 +7,7 @@ terraform {
     }
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = " = 2.21.0"
+      version = " = 3.26.0"
     }
     alicloud = {
       source = "aliyun/alicloud"

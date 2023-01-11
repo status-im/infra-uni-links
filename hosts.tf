@@ -14,8 +14,15 @@ module "uni_links" {
 /* Load Blanacer for created hosts */
 module "uni_links_lb" {
   source = "./modules/cloud-flare-lb"
-  env    = "uni-links"
   name   = "join"
-  hosts  = module.uni_links.hosts_by_dc
   domain = var.public_domain
+  hosts  = module.uni_links.hosts_by_dc
+  /* Required to map our DCs to pool regions. */
+  region_map = tomap({
+    "gc-us-central1-a" = "ENAM" /* Eastern North America */
+    "ac-cn-hongkong-c" = "SEAS" /* Southeast Asia */
+    "do-eu-amsterdam3" = "EEU" /* Eastern Europe */
+  })
+
+  account_id = data.pass_password.cloudflare_account.password
 }
