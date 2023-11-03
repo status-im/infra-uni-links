@@ -17,7 +17,7 @@
 
 - name: open-ports
   src: git@github.com:status-im/infra-role-open-ports.git
-  version: 24dc30dbdf85e6758cb6924074b2f7a0f4541524
+  version: 7f2d730d60a3efc9e5e96e4c55490b7f9e0fd70e
   scm: git
 
 - name: nginx
