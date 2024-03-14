@@ -7,7 +7,6 @@ module "uni_links" {
   name       = "node"
   env        = "uni-links"
   group      = "uni-links"
-  domain     = var.domain
 
   open_tcp_ports = ["80", "443"]
 }
@@ -17,7 +16,7 @@ module "uni_links_lb" {
   source     = "github.com/status-im/infra-tf-cloud-flare-lb"
 
   name   = "join"
-  domain = var.public_domain
+  domain = "status.im"
   hosts  = module.uni_links.hosts_by_dc
 
   /* Required to map our DCs to pool regions. */
