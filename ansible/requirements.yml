@@ -7,30 +7,30 @@
   src: git@github.com:status-im/infra-role-wireguard.git
   scm: git
 
-- name: consul-service
+- name: infra-role-consul-service
   src: git@github.com:status-im/infra-role-consul-service.git
   scm: git
 
-- name: swap-file
+- name: infra-role-swap-file
   src: git@github.com:status-im/infra-role-swap-file.git
   scm: git
 
-- name: open-ports
+- name: infra-role-open-ports
   src: git@github.com:status-im/infra-role-open-ports.git
   version: 7f2d730d60a3efc9e5e96e4c55490b7f9e0fd70e
   scm: git
 
-- name: nginx
+- name: infra-role-nginx
   src: git@github.com:status-im/infra-role-nginx.git
   version: 3043c998cbc92a634a71dc48363b3e2525696d26
   scm: git
 
-- name: origin-certs
+- name: infra-role-origin-certs
   src: git@github.com:status-im/infra-role-origin-certs.git
   version: f2b061da8976444d6576b755578f0e799cde4372
   scm: git
 
-- name: threatstack
+- name: infra-role-threatstack
   src: git@github.com:status-im/infra-role-threatstack.git
   version: 581bf6f1bd8b0d4873a77166b9ceb48a417565eb
   scm: git

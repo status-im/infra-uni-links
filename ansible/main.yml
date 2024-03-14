@@ -12,9 +12,9 @@
 - name: Configure uni-links
   hosts: uni-links
   roles:
-    - { role: swap-file,         tags: swap-file }
-    - { role: origin-certs,      tags: origin-certs }
-    - { role: uni-links-handler, tags: uni-links-handler }
-    - { role: nginx,             tags: nginx }
-    - { role: open-ports,        tags: open-ports }
-    - { role: threatstack,       tags: threatstack }
+    - { role: infra-role-swap-file,         tags: swap-file }
+    - { role: infra-role-origin-certs,      tags: origin-certs }
+    - { role: infra-role-uni-links-handler, tags: uni-links-handler }
+    - { role: infra-role-nginx,             tags: nginx }
+    - { role: infra-role-open-ports,        tags: open-ports }
+    - { role: infra-role-threatstack,       tags: threatstack }
