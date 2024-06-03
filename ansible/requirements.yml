@@ -25,6 +25,11 @@
   version: 3043c998cbc92a634a71dc48363b3e2525696d26
   scm: git
 
+- name: infra-role-nginx-metrics
+  src: git@github.com:status-im/infra-role-nginx-metrics.git
+  version: fdc31d5b233b1b3b1bd46338a3c64e0dd08641cf
+  scm: git
+
 - name: infra-role-origin-certs
   src: git@github.com:status-im/infra-role-origin-certs.git
   version: f2b061da8976444d6576b755578f0e799cde4372

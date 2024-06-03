@@ -6,12 +6,16 @@ uni_links_cont_port: 8092
 # Just in case
 swap_file_size_mb: 1024
 
+# Nginx Metrics
+nginx_metrics_listen_port: 9113
+
 # Open Nginx Ports
 open_ports_default_comment: 'Universal Links'
 open_ports_default_chain: 'SERVICES'
 open_ports_list:
   - { port: 80  }
   - { port: 443 }
+  - { port: '{{ nginx_metrics_listen_port }}', comment: 'Nginx Metrics' }
 
 # Nginx SSL Proxy configuration
 nginx_sites:
