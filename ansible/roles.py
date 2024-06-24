@@ -218,12 +218,12 @@ class Role:
         status = self._git('status', '--untracked-files=no')
 
         if 'branch is up to date' in status:
-            return True
+            return self.version
         elif 'branch is behind' not in status:
             return None
 
         rval = self._git('pull')
-        return self.valid_version()
+        return self.version
 
     @State.update(success=State.CLONED, failure=State.CLONE_FAILURE)
     def clone(self):
