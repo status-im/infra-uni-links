@@ -12,7 +12,7 @@
 
 - name: infra-role-open-ports
   src: git@github.com:status-im/infra-role-open-ports.git
-  version: ec9b3527285fb129cf0e65c5d6d17356eae6aa2d
+  version: c14d080ac034182353d64716bd48c2a04e2eb8e1
 
 - name: infra-role-nginx
   src: git@github.com:status-im/infra-role-nginx.git
