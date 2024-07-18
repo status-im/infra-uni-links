@@ -11,20 +11,11 @@ module "uni_links" {
   open_tcp_ports = ["80", "443"]
 }
 
-/* Load Blanacer for created hosts */
-module "uni_links_lb" {
-  source     = "github.com/status-im/infra-tf-cloud-flare-lb"
-
-  name   = "join"
-  domain = "status.im"
-  hosts  = module.uni_links.hosts_by_dc
-
-  /* Required to map our DCs to pool regions. */
-  region_map = tomap({
-    "gc-us-central1-a" = "ENAM" /* Eastern North America */
-    "ac-cn-hongkong-c" = "SEAS" /* Southeast Asia */
-    "do-eu-amsterdam3" = "EEU" /* Eastern Europe */
-  })
-
-  account_id = data.pass_password.cloudflare_account.password
+resource "cloudflare_record" "join_status_im" {
+  zone_id  = lookup(local.zones, "status.im")
+  for_each = toset(module.uni_links.public_ips)
+  name     = "join"
+  value    = each.value
+  type     = "A"
+  proxied  = true
 }

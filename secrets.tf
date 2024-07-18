@@ -11,11 +11,6 @@ data "pass_password" "cloudflare_email" {
   path = "cloud/Cloudflare/email"
 }
 
-/* ID of CloudFlare Account. */
-data "pass_password" "cloudflare_account" {
-  path = "cloud/Cloudflare/account"
-}
-
 /* Token for interacting with DigitalOcean API. */
 data "pass_password" "digitalocean_token" {
   path = "cloud/DigitalOcean/token"
