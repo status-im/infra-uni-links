@@ -14,7 +14,7 @@ open_ports_default_comment: 'Nginx'
 open_ports_list:
   nginx:
     - { port: [ 80, 443 ] }
-    - { port: '{{ nginx_metrics_listen_port }}', ipset: 'metrics.hq', iifname: 'wg0' }
+    - { port: '{{ nginx_metrics_listen_port }}', ipset: 'hq.metrics', iifname: 'wg0' }
 
 # Nginx SSL Proxy configuration
 nginx_sites:
