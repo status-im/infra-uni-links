@@ -19,3 +19,5 @@
     - { role: infra-role-nginx-metrics,     tags: nginx-metrics     }
     - { role: infra-role-open-ports,        tags: open-ports        }
     - { role: infra-role-threatstack,       tags: threatstack       }
+    - { role: infra-role-wazuh-agent,       tags: wazuh-agent       }
+

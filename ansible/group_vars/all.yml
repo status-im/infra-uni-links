@@ -25,3 +25,7 @@ origin_certs:
     crt: '{{lookup("vault", "certs/cloudflare/status.im", field="origin.crt", env="all", stage="all")}}'
     key: '{{lookup("vault", "certs/cloudflare/status.im", field="origin.key", env="all", stage="all")}}'
     default: true
+
+# Wazuh Agent
+wazuh_agent_enrollment_key:         '{{ lookup("vault", "wazuh-agent", field="enrollment-key",          env="all", stage="all")}}'
+wazuh_root_ca:                      '{{ lookup("vault", "certs/wazuh-ca", field="certificate",          env="all", stage="all")}}'

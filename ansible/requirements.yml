@@ -29,3 +29,7 @@
 - name: infra-role-threatstack
   src: git@github.com:status-im/infra-role-threatstack.git
   version: 581bf6f1bd8b0d4873a77166b9ceb48a417565eb
+
+- name: infra-role-wazuh-agent
+  src: git@github.com:status-im/infra-role-wazuh-agent.git
+  version: 413e806e8238a4d6f361fab8897bddc1411b0b9b
