@@ -12,24 +12,20 @@
 
 - name: infra-role-open-ports
   src: git@github.com:status-im/infra-role-open-ports.git
-  version: c14d080ac034182353d64716bd48c2a04e2eb8e1
+  version: 39de8abb91afa8e0ff0df16afa103df554f644ad
 
 - name: infra-role-nginx
   src: git@github.com:status-im/infra-role-nginx.git
-  version: 3043c998cbc92a634a71dc48363b3e2525696d26
+  version: 285cc7aba6144571a2084d9eb06745700e065e18
 
 - name: infra-role-nginx-metrics
   src: git@github.com:status-im/infra-role-nginx-metrics.git
-  version: fdc31d5b233b1b3b1bd46338a3c64e0dd08641cf
+  version: 27663f92e836665968a098a95387b2e725ec28b8
 
 - name: infra-role-origin-certs
   src: git@github.com:status-im/infra-role-origin-certs.git
   version: f2b061da8976444d6576b755578f0e799cde4372
 
-- name: infra-role-threatstack
-  src: git@github.com:status-im/infra-role-threatstack.git
-  version: 581bf6f1bd8b0d4873a77166b9ceb48a417565eb
-
 - name: infra-role-wazuh-agent
   src: git@github.com:status-im/infra-role-wazuh-agent.git
-  version: 413e806e8238a4d6f361fab8897bddc1411b0b9b
+  version: 2e6769a22ba077b05d365ee8fb86bb04b0e75e9a
