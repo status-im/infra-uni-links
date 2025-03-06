@@ -1,3 +1,5 @@
+# :warning: Legacy fleet repository.
+
 # Description
 
 This repo configures the deep linking service for Status.im app.
